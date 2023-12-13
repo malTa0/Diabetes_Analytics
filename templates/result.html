@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <style>
+        body {
+            background-image: url('https://alecia.ro/wp-content/uploads/2018/05/dulciuri-pentru-diabet.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center center;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #2a1fbd; /* Set text color to white for better visibility on a dark background */
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2a1fbd;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .prediction-message {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        a {
+            color: #2a1fbd;
+        }
+
+        /* Additional styles for background and container */
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Diabetes Prediction Result</h1>
+
+        {% if prediction == 0 %}
+        <p class="prediction-message">Prediction: {{ prediction }}</p>
+        <p>The model predicts that the patient does not have diabetes.</p>
+        {% else %}
+        <p class="prediction-message">Prediction: {{ prediction }}</p>
+        <p>The model predicts that the patient has diabetes.</p>
+        {% endif %}
+
+        <a href="/">Go back to input page</a>
+    </div>
+</body>
+</html>
